@@ -1,0 +1,21 @@
+players=[
+    (1,"virat",98)
+    (2,"rohit",100)
+    (3,"vaibhav",99)
+    (4,"mahi",101)
+    ]
+    
+    max score=0
+    name=
+    for p in players:
+        if p[2]>max score:
+            max score=p[2]
+            name=p[1]
+    print("maximum score=",max score)
+    print("player name=",name)
+
+
+total=0
+    for p in players:
+        total = total + p[2]
+    print("total score=",total)
