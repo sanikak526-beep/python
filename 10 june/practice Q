@@ -1,0 +1,47 @@
+stud = {
+    101: {
+        "name": "ram",
+        "age": 18,
+        "sub": ["python", "java", "Mren"],
+        "marks": [70, 89, 78]
+    },
+    102: {
+        "name": "sita",
+        "age": 19,
+        "sub": ["python", "java", "Mren"],
+        "marks": [70, 80, 90]
+    },
+    103: {
+        "name": "rahul",
+        "age": 20,
+        "sub": ["python", "java", "Mren"],
+        "marks": [71, 84, 90]
+    },
+    104: {
+        "name": "gita",
+        "age": 21,
+        "sub": ["python", "java", "Mren"],
+        "marks": [58, 79, 90]
+    }
+}
+
+for values in stud.values():
+    print(values)
+    
+    
+    highest = 0
+name = ""
+
+for details in stud.values():
+    # Highest Python marks
+    if details["marks"][0] > highest:
+        highest = details["marks"][0]
+        name = details["name"]
+
+    # Age greater than 19
+    if details["age"] > 19:
+        print(details["name"], "-", details["age"])
+
+print("Highest Python Marks:", highest)
+print("Student Name:", name)
+    
