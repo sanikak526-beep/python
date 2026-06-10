@@ -1,0 +1,33 @@
+product={
+    101:{
+        "productname":"car",
+        "price":10000,
+        "colur":"black",
+        "qty":10,
+        "models":[501,502]
+    }
+}
+print(product[101]["colur"])
+
+#key
+for v in product.values():
+    for k in v.values():
+        print(k)
+
+# changes
+
+product={
+    101:{
+        "productname":"car",
+        "price":10000,
+        "colur":"black",
+        "qty":10,
+        "models":[501,502]
+    }
+}
+print(product[101]["colur"])
+
+#key
+for v in product.values():
+    for k,v in v.items():
+        print(k,v)
