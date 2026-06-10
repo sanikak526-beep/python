@@ -1,0 +1,27 @@
+x=set()
+print(type(x))
+x.add(30)
+print(x)
+
+x={10,20,30,40,10}
+print(x)
+
+x1=list(x)
+print(x1[0])
+
+x1[2]=90
+print(x1)
+
+x=set(x1)
+print(x,type(x))
+
+#function of set 
+
+
+A={1,2,3}
+B={3,4,5}
+print(A|B)#union
+print(A&B)#intersection
+print(A-B)#difference
+print(A^B)#symmetric diffrence
+
