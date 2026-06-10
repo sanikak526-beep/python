@@ -1,0 +1,9 @@
+x={}
+key=input("enter key")
+value=input("enter value")
+x[key]=value
+print(x)
+x.update({"name":"ram"})
+x.update({"name":"sita"})
+x.update({"age":"70"})
+print(x)
