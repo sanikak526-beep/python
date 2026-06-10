@@ -1,0 +1,18 @@
+dictinary
+
+x={}
+print(x,type(x))
+
+
+#add
+x["name"]="ram"
+print(x)
+print(x["name"])
+#update 
+x["name"]="sita"
+print()
+x[101]="stud data"
+print(x)
+#del
+del x[101]
+print(x)
