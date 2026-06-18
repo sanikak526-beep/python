@@ -1,0 +1,42 @@
+from clothes import clothes
+from grocery import grocery
+from purches import purches
+
+c=clothes("clothes","jeans",100,799,"black",'m');
+g=grocery("grocery_section","sugar",60,100,"suger lite","2025-06-01","2027-06-02")
+p=purches("purches","sugar",60,100)
+
+while True:
+    print("welcome to dmart\n1.Grocery section\n2.clothing_section\n3.purches\nexit\n")
+    choice=int(input("enter yr choice !\n"))
+    match choice:
+        case 1:
+            print(g.display_grocery_details())
+        case 2:
+            print(c.display_clothes_details())
+        case 3:
+            print(p.display_purches_details())
+        case 4:
+            print("thank you !")
+            break;
+        case _:
+            print("invalid choice!")
+
+
+
+    n = int(input("Enter number of items: "))
+
+    for i in range(n):
+        item = input("\nEnter item name: ")
+        quantity = int(input("Enter quantity: "))
+        price = float(input("Enter price per item: "))
+
+        amount = quantity * price
+        total_bill += amount
+
+        print("Item:", item)
+        print("Quantity:", quantity)
+        print("Amount:", amount)
+
+    print("\n------ BILL ------")
+    print("Total Bill =", total_bill)
