@@ -1,0 +1,22 @@
+class insta:
+    def __init__(self,name,usrname,pwd):
+        self.name=name
+        self.username=usrname
+        self.__pwd=pwd
+        #login
+    
+    def login(self,username,pwd):
+        if self.username==username and self.__pwd==pwd:
+            print("login successful")
+        else:
+            print("login failed")
+
+    def __otp_login(self):
+        if self.username==username and self.__pwd==pwd:
+            print("login successful")
+        else:
+            print("login failed")
+
+obj=insta("sanika","sanika123","sanika@123")
+obj.login("sanika123","sanika@123")
+obj._insta__otp_login()
