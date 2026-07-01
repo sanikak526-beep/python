@@ -1,0 +1,31 @@
+class p1:
+    def xyz(self):
+        print("form p1 xyz")
+
+    def show(self):
+        print("from p1 show")
+
+        class p2:
+    def abc(self):
+        print("from p2 abc")
+
+    def show(self):
+        print("from p2 show")
+
+
+        from p1 import p1
+from p2 import p2
+class p3(p1,p2):
+    def pqr(self):
+        print("im from child pqr")
+
+    def call_p2_show(self):
+        return p2.show
+    
+    obj= p3 ()
+    obj.xyz()
+    obj.abc()
+    obj.pqr()  
+    obj.show()  # it will call p1 show because of method resolution order (MRO) in multiple inheritance
+    obj.call_p2_show()()  # it will call p2 show because we are calling show method of p2 class explicitly using call_p2_show method     
+    
