@@ -1,0 +1,25 @@
+class A:
+    def xyz(self):
+        print("from xyz A")
+
+
+from A import A
+class B:
+    def abc(self):
+        print("from abc B")
+
+
+from A import A
+class D(B,C):
+     def mno(self):
+            print("from mno D")
+
+      def __init__(self):
+            print("from init D")    
+            super().__init__()
+
+obj = D()  
+obj.mno()
+obj.pqr()
+obj.xyz()
+obj.abc()    
