@@ -1,0 +1,28 @@
+class payment:
+    def __init__(self, amount, method):
+        self.amount = amount
+        self.method = method
+
+    def process_payment(self):
+        print(f"Processing payment of {self.amount} using {self.method}.")
+class product:
+        def __init__(self, name, price):
+            self.name=name
+            self.price=price
+
+        def show_product(self):
+            print f" {self.name}\n {self.price}"  
+from payment import payment
+from product import product
+class order:
+    def __init__(self, order_id, product, payment):
+        self.order_id = order_id
+        self.product = product
+        self.payment = payment
+
+    def show_order(self):
+        print(f"Order ID: {self.order_id}")
+        self.product.show_product()
+        self.payment.process_payment() 
+
+        
