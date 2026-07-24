@@ -1,0 +1,132 @@
+class Student:
+
+    def __init__(self):
+        self.students = []
+
+    def add_student(self):
+        roll = int(input("Enter Roll Number: "))
+        name = input("Enter Student Name: ")
+        age = int(input("Enter Age: "))
+        marks = float(input("Enter Marks: "))
+
+        student = {
+            "Roll": roll,
+            "Name": name,
+            "Age": age,
+            "Marks": marks
+        }
+
+        self.students.append(student)
+        print("\nStudent Added Successfully!\n")
+
+    def display_students(self):
+        if len(self.students) == 0:
+            print("\nNo Student Records Found.\n")
+            return
+
+        print("\n----------- Student Records -----------")
+        print("Roll\tName\t\tAge\tMarks")
+        print("---------------------------------------")
+
+        for s in self.students:
+            print(f"{s['Roll']}\t{s['Name']}\t\t{s['Age']}\t{s['Marks']}")
+
+    def search_student(self):
+        roll = int(input("\nEnter Roll Number to Search: "))
+
+        for s in self.students:
+            if s["Roll"] == roll:
+                print("\nStudent Found")
+                print("Roll Number :", s["Roll"])
+                print("Name        :", s["Name"])
+                print("Age         :", s["Age"])
+                print("Marks       :", s["Marks"])
+                return
+
+        print("Student Not Found!")
+
+    def update_student(self):
+        roll = int(input("\nEnter Roll Number to Update: "))
+
+        for s in self.students:
+            if s["Roll"] == roll:
+                s["Name"] = input("Enter New Name: ")
+                s["Age"] = int(input("Enter New Age: "))
+                s["Marks"] = float(input("Enter New Marks: "))
+                print("Record Updated Successfully!")
+                return
+
+        print("Student Not Found!")
+
+    def delete_student(self):
+        roll = int(input("\nEnter Roll Number to Delete: "))
+
+        for s in self.students:
+            if s["Roll"] == roll:
+                self.students.remove(s)
+                print("Record Deleted Successfully!")
+                return
+
+        print("Student Not Found!")
+
+    def result(self):
+        roll = int(input("\nEnter Roll Number: "))
+
+        for s in self.students:
+            if s["Roll"] == roll:
+                print("\n------ RESULT ------")
+                print("Name :", s["Name"])
+                print("Marks:", s["Marks"])
+
+                if s["Marks"] >= 75:
+                    print("Grade : Distinction")
+                elif s["Marks"] >= 60:
+                    print("Grade : First Class")
+                elif s["Marks"] >= 40:
+                    print("Grade : Pass")
+                else:
+                    print("Grade : Fail")
+                return
+
+        print("Student Not Found!")
+
+
+# Create Object
+obj = Student()
+
+while True:
+    print("\n========== STUDENT MANAGEMENT SYSTEM ==========")
+    print("1. Add Student")
+    print("2. Display Students")
+    print("3. Search Student")
+    print("4. Update Student")
+    print("5. Delete Student")
+    print("6. Show Result")
+    print("7. Exit")
+
+    choice = int(input("Enter Your Choice: "))
+
+    if choice == 1:
+        obj.add_student()
+
+    elif choice == 2:
+        obj.display_students()
+
+    elif choice == 3:
+        obj.search_student()
+
+    elif choice == 4:
+        obj.update_student()
+
+    elif choice == 5:
+        obj.delete_student()
+
+    elif choice == 6:
+        obj.result()
+
+    elif choice == 7:
+        print("Thank You!")
+        break
+
+    else:
+        print("Invalid Choice! Please Try Again.")
