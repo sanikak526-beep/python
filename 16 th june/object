@@ -1,0 +1,52 @@
+Program 1: Student Object
+class Student:
+
+    def display(self):
+        print("Name: Priyanka")
+        print("Roll No: 101")
+
+# Create Object
+s1 = Student()
+
+# Call Method
+s1.display()
+
+
+Program 2: Employee Object
+class Employee:
+
+    def details(self):
+        print("Employee ID: 201")
+        print("Employee Name: Rahul")
+        print("Salary: 35000")
+
+# Create Object
+emp = Employee()
+
+emp.details()
+
+
+Program 3: Multiple Objects
+class Student:
+
+    def get_data(self, name, roll):
+        self.name = name
+        self.roll = roll
+
+    def display(self):
+        print("Name:", self.name)
+        print("Roll No:", self.roll)
+
+# Create Objects
+s1 = Student()
+s2 = Student()
+
+# Store Data
+s1.get_data("Priyanka", 101)
+s2.get_data("Rahul", 102)
+
+# Display Data
+s1.display()
+print()
+
+s2.display()
