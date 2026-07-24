@@ -1,0 +1,107 @@
+# Student Management System using Functions
+
+students = {}
+
+def add_student():
+    roll = input("Enter Roll Number: ")
+    name = input("Enter Student Name: ")
+    marks = float(input("Enter Marks: "))
+
+    students[roll] = {
+        "name": name,
+        "marks": marks
+    }
+
+    print("Student added successfully!\n")
+
+
+def view_students():
+    if not students:
+        print("No student records found.\n")
+        return
+
+    print("\n------ Student Records ------")
+    for roll, data in students.items():
+        print(f"Roll No : {roll}")
+        print(f"Name    : {data['name']}")
+        print(f"Marks   : {data['marks']}")
+        print("-----------------------------")
+
+
+def search_student():
+    roll = input("Enter Roll Number to Search: ")
+
+    if roll in students:
+        print("\nStudent Found")
+        print("Roll No :", roll)
+        print("Name    :", students[roll]["name"])
+        print("Marks   :", students[roll]["marks"])
+    else:
+        print("Student not found.")
+
+
+def update_marks():
+    roll = input("Enter Roll Number: ")
+
+    if roll in students:
+        marks = float(input("Enter New Marks: "))
+        students[roll]["marks"] = marks
+        print("Marks updated successfully!")
+    else:
+        print("Student not found.")
+
+
+def delete_student():
+    roll = input("Enter Roll Number to Delete: ")
+
+    if roll in students:
+        del students[roll]
+        print("Student deleted successfully!")
+    else:
+        print("Student not found.")
+
+
+def calculate_average():
+    if not students:
+        print("No records available.")
+        return
+
+    total = 0
+    for student in students.values():
+        total += student["marks"]
+
+    average = total / len(students)
+    print(f"Average Marks = {average:.2f}")
+
+
+def menu():
+    while True:
+        print("\n====== Student Management System ======")
+        print("1. Add Student")
+        print("2. View Students")
+        print("3. Search Student")
+        print("4. Update Marks")
+        print("5. Delete Student")
+        print("6. Calculate Average")
+        print("7. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            add_student()
+        elif choice == "2":
+            view_students()
+        elif choice == "3":
+            search_student()
+        elif choice == "4":
+            update_marks()
+        elif choice == "5":
+            delete_student()
+        elif choice == "6":
+            calculate_average()
+        elif choice == "7":
+            print("Thank you!")
+            break
+        else:
+            print("Invalid choice! Please try again.")
+menu()
