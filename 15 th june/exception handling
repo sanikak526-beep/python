@@ -1,0 +1,76 @@
+1.Exception Handling for Division by Zero
+def divide():
+    try:
+        a = int(input("Enter first number: "))
+        b = int(input("Enter second number: "))
+        result = a / b
+        print("Result =", result)
+
+    except ZeroDivisionError:
+        print("Error: Cannot divide by zero.")
+
+
+
+divide()
+2. Exception Handling for Invalid Input
+def addition():
+    try:
+        a = int(input("Enter first number: "))
+        b = int(input("Enter second number: "))
+        print("Sum =", a + b)
+
+    except ValueError:
+        print("Error: Please enter only integers.")
+
+
+
+
+
+addition()
+3. Exception Handling Using Multiple except
+def calculator():
+    try:
+        a = int(input("Enter first number: "))
+        b = int(input("Enter second number: "))
+        print("Division =", a / b)
+
+    except ValueError:
+        print("Invalid input! Enter numbers only.")
+
+    except ZeroDivisionError:
+        print("Cannot divide by zero.")
+
+
+
+
+
+calculator()
+4. Exception Handling Using finally
+def divide():
+    try:
+        a = int(input("Enter first number: "))
+        b = int(input("Enter second number: "))
+        print("Result =", a / b)
+
+    except ZeroDivisionError:
+        print("Cannot divide by zero.")
+
+    finally:
+        print("Program Finished.")
+
+
+
+
+divide()
+5. Exception Handling Using else
+def addition():
+    try:
+        a = int(input("Enter first number: "))
+        b = int(input("Enter second number: "))
+        c = a + b
+
+    except ValueError:
+        print("Invalid input.")
+
+    else:
+        print("Sum =", c)
