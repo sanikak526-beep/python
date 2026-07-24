@@ -1,0 +1,121 @@
+def add_student():
+    try:
+        roll = int(input("Enter Roll Number: "))
+        name = input("Enter Student Name: ")
+        marks = float(input("Enter Marks: "))
+
+        student = {
+            "Roll": roll,
+            "Name": name,
+            "Marks": marks
+        }
+
+        students.append(student)
+        print("\nStudent Added Successfully!\n")
+
+    except ValueError:
+        print("Invalid Input! Please enter correct data.\n")
+
+
+def display_students():
+    if len(students) == 0:
+        print("\nNo Student Records Found.\n")
+    else:
+        print("\n----- Student Records -----")
+        print("Roll\tName\t\tMarks")
+        print("-" * 35)
+
+        for s in students:
+            print(f"{s['Roll']}\t{s['Name']}\t\t{s['Marks']}")
+        print()
+
+
+def search_student():
+    try:
+        roll = int(input("Enter Roll Number to Search: "))
+
+        for s in students:
+            if s["Roll"] == roll:
+                print("\nStudent Found")
+                print("Roll :", s["Roll"])
+                print("Name :", s["Name"])
+                print("Marks:", s["Marks"])
+                return
+
+        print("Student Not Found.\n")
+
+    except ValueError:
+        print("Invalid Roll Number.\n")
+
+
+def update_student():
+    try:
+        roll = int(input("Enter Roll Number to Update: "))
+
+        for s in students:
+            if s["Roll"] == roll:
+                s["Name"] = input("Enter New Name: ")
+                s["Marks"] = float(input("Enter New Marks: "))
+                print("Record Updated Successfully!\n")
+                return
+
+        print("Student Not Found.\n")
+
+    except ValueError:
+        print("Invalid Input.\n")
+
+
+def delete_student():
+    try:
+        roll = int(input("Enter Roll Number to Delete: "))
+
+        for s in students:
+            if s["Roll"] == roll:
+                students.remove(s)
+                print("Record Deleted Successfully!\n")
+                return
+
+        print("Student Not Found.\n")
+
+    except ValueError:
+        print("Invalid Roll Number.\n")
+
+
+students = []
+
+while True:
+    print("===== STUDENT MANAGEMENT SYSTEM =====")
+    print("1. Add Student")
+    print("2. Display Students")
+    print("3. Search Student")
+    print("4. Update Student")
+    print("5. Delete Student")
+    print("6. Exit")
+
+    try:
+        choice = int(input("Enter Your Choice: "))
+
+        if choice == 1:
+            add_student()
+
+        elif choice == 2:
+            display_students()
+
+        elif choice == 3:
+            search_student()
+
+        elif choice == 4:
+            update_student()
+
+        elif choice == 5:
+            delete_student()
+
+        elif choice == 6:
+            print("Thank You!")
+            break
+
+        else:
+            print("Invalid Choice!\n")
+
+    except ValueError:
+        print("Please Enter Numbers Only!\n")
