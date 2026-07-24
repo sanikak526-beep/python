@@ -1,0 +1,91 @@
+class Student:
+
+    def __init__(self, roll, name, marks):
+        self.roll = roll
+        self.name = name
+        self.marks = marks
+
+    def display(self):
+        print("Roll Number :", self.roll)
+        print("Name :", self.name)
+        print("Marks :", self.marks)
+
+# Create Object
+s1 = Student(101, "Priyanka", 90)
+
+# Display Details
+s1.display()
+
+
+
+
+class Employee:
+
+    def get_data(self):
+        self.id = int(input("Enter Employee ID: "))
+        self.name = input("Enter Employee Name: ")
+        self.salary = float(input("Enter Salary: "))
+
+    def display(self):
+        print("\nEmployee Details")
+        print("ID :", self.id)
+        print("Name :", self.name)
+        print("Salary :", self.salary)
+
+emp = Employee()
+
+emp.get_data()
+emp.display()
+
+
+
+class Bank:
+
+    def __init__(self):
+        self.balance = 0
+
+    def deposit(self):
+        amount = float(input("Enter Deposit Amount: "))
+        self.balance += amount
+        print("Amount Deposited Successfully")
+
+    def withdraw(self):
+        amount = float(input("Enter Withdrawal Amount: "))
+
+        if amount <= self.balance:
+            self.balance -= amount
+            print("Withdrawal Successful")
+        else:
+            print("Insufficient Balance")
+
+    def show_balance(self):
+        print("Current Balance =", self.balance)
+
+account = Bank()
+
+while True:
+    print("\n1. Deposit")
+    print("2. Withdraw")
+    print("3. Balance")
+    print("4. Exit")
+
+    choice = int(input("Enter Choice: "))
+
+    if choice == 1:
+        account.deposit()
+
+    elif choice == 2:
+        account.withdraw()
+
+    elif choice == 3:
+        account.show_balance()
+
+    elif choice == 4:
+        print("Thank You")
+        break
+
+    else:
+        print("Invalid Choice")
+
+
+
