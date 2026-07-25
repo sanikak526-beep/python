@@ -1,0 +1,137 @@
+
+Program 1: Single Inheritance (Student Result System)
+class Student:
+
+    def get_student(self):
+        self.roll = int(input("Enter Roll Number: "))
+        self.name = input("Enter Student Name: ")
+
+class Marks(Student):
+
+    def get_marks(self):
+        self.python = float(input("Enter Python Marks: "))
+        self.java = float(input("Enter Java Marks: "))
+        self.dbms = float(input("Enter DBMS Marks: "))
+
+    def calculate(self):
+        self.total = self.python + self.java + self.dbms
+        self.percentage = self.total / 3
+
+    def display(self):
+        print("\n------ STUDENT RESULT ------")
+        print("Roll Number :", self.roll)
+        print("Student Name:", self.name)
+        print("Python Marks:", self.python)
+        print("Java Marks  :", self.java)
+        print("DBMS Marks  :", self.dbms)
+        print("Total Marks :", self.total)
+        print("Percentage  :", round(self.percentage, 2), "%")
+
+        if self.percentage >= 75:
+            print("Grade : Distinction")
+        elif self.percentage >= 60:
+            print("Grade : First Class")
+        elif self.percentage >= 40:
+            print("Grade : Pass")
+        else:
+            print("Grade : Fail")
+
+obj = Marks()
+
+obj.get_student()
+obj.get_marks()
+obj.calculate()
+obj.display()
+Program 2: Multilevel Inheritance (Employee Salary System)
+class Employee:
+
+    def get_employee(self):
+        self.empid = int(input("Enter Employee ID: "))
+        self.name = input("Enter Employee Name: ")
+
+
+class Salary(Employee):
+
+    def get_salary(self):
+        self.basic = float(input("Enter Basic Salary: "))
+        self.hra = float(input("Enter HRA: "))
+        self.da = float(input("Enter DA: "))
+
+
+class Bonus(Salary):
+
+    def calculate(self):
+        self.bonus = self.basic * 0.10
+        self.total_salary = self.basic + self.hra + self.da + self.bonus
+
+    def display(self):
+        print("\n------ EMPLOYEE DETAILS ------")
+        print("Employee ID :", self.empid)
+        print("Employee Name :", self.name)
+        print("Basic Salary :", self.basic)
+        print("HRA :", self.hra)
+        print("DA :", self.da)
+        print("Bonus :", self.bonus)
+        print("Total Salary :", self.total_salary)
+
+emp = Bonus()
+
+emp.get_employee()
+emp.get_salary()
+emp.calculate()
+emp.display()
+Program 3: Hierarchical Inheritance (Bank Management System)
+class Bank:
+
+    def get_account(self):
+        self.accno = int(input("Enter Account Number: "))
+        self.name = input("Enter Account Holder Name: ")
+        self.balance = float(input("Enter Balance: "))
+
+
+class SavingAccount(Bank):
+
+    def saving_interest(self):
+        interest = self.balance * 0.05
+        total = self.balance + interest
+
+        print("\n------ SAVING ACCOUNT ------")
+        print("Account Number :", self.accno)
+        print("Account Holder :", self.name)
+        print("Balance :", self.balance)
+        print("Interest :", interest)
+        print("Total Balance :", total)
+
+
+class CurrentAccount(Bank):
+
+    def current_details(self):
+        print("\n------ CURRENT ACCOUNT ------")
+        print("Account Number :", self.accno)
+        print("Account Holder :", self.name)
+        print("Balance :", self.balance)
+
+        if self.balance < 5000:
+            print("Minimum Balance Warning!")
+        else:
+            print("Account Status : Active")
+
+
+print("Choose Account Type")
+print("1. Saving Account")
+print("2. Current Account")
+
+choice = int(input("Enter Choice: "))
+
+if choice == 1:
+    s = SavingAccount()
+    s.get_account()
+    s.saving_interest()
+
+elif choice == 2:
+    c = CurrentAccount()
+    c.get_account()
+    c.current_details()
+
+else:
+    print("Invalid Choice")
