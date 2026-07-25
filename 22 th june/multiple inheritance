@@ -1,0 +1,82 @@
+# Base Class
+class Person:
+    def __init__(self, name, person_id):
+        self.name = name
+        self.person_id = person_id
+
+    def display_person(self):
+        print("\n----- Person Details -----")
+        print("Name:", self.name)
+        print("Person ID:", self.person_id)
+
+
+# Derived Class: Student
+class Student(Person):
+    def __init__(self, name, person_id, roll_no, course):
+        super().__init__(name, person_id)
+        self.roll_no = roll_no
+        self.course = course
+        self.borrowed_books = []
+
+    def borrow_book(self, book):
+        self.borrowed_books.append(book)
+        print(f"{self.name} borrowed '{book}'.")
+
+    def display_student(self):
+        self.display_person()
+        print("Roll No:", self.roll_no)
+        print("Course:", self.course)
+        print("Borrowed Books:", self.borrowed_books)
+
+
+# Derived Class: Librarian
+class Librarian(Person):
+    def __init__(self, name, person_id):
+        super().__init__(name, person_id)
+        self.library_books = []
+
+    def add_book(self, book):
+        self.library_books.append(book)
+        print(f"Book '{book}' added successfully.")
+
+    def remove_book(self, book):
+        if book in self.library_books:
+            self.library_books.remove(book)
+            print(f"Book '{book}' removed successfully.")
+        else:
+            print("Book not found.")
+
+    def display_books(self):
+        print("\nAvailable Books:")
+        if self.library_books:
+            for book in self.library_books:
+                print("-", book)
+        else:
+            print("No books available.")
+
+
+# Main Program
+print("===== Library Management System =====")
+
+librarian = Librarian("Admin", 101)
+
+# Adding books
+librarian.add_book("Python Programming")
+librarian.add_book("Data Structures")
+librarian.add_book("Machine Learning")
+librarian.add_book("Artificial Intelligence")
+
+librarian.display_books()
+
+# Student Details
+student = Student("Sanika", 201, 15, "Computer Engineering")
+
+# Borrow Books
+student.borrow_book("Python Programming")
+student.borrow_book("Machine Learning")
+
+# Display Information
+student.display_student()
+
+print("\n")
+librarian.display_books()
