@@ -1,0 +1,44 @@
+Linux is a free and open-source operating system based on the Unix operating system. It is widely used for servers, desktops, cloud computing, embedded systems, and Android devices. Linux is known for its security, stability, speed, and flexibility.
+Features of Linux
+Open source and free
+Multi-user operating system
+Multitasking support
+Secure and reliable
+Portable (runs on many hardware platforms)
+Supports networking
+Powerful command-line interface
+Common Linux Distributions
+Ubuntu
+Fedora
+Debian
+Red Hat Enterprise Linux (RHEL)
+CentOS
+Linux Mint
+Kali Linux
+
+
+
+pwd
+Shows the current directory.
+ls
+Lists files and folders.
+ls -l
+Shows detailed file information.
+ls -a
+Shows all files, including hidden files.
+cd Documents
+Moves to the Documents folder.
+cd.
+Moves to the parent directory.
+mkdir Test
+Creates a folder named Test.
+touch file.txt
+Creates an empty file named file.txt.
+cat file.txt
+Displays the contents of file.txt.
+echo "Hello Linux"
+Prints Hello Linux on the terminal.
+echo "Hello Linux" > file.txt
+Writes text into file.txt.
+cp file.txt copy.txt
+cd ..
