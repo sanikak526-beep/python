@@ -1,0 +1,23 @@
+table1 = {1, 2, 3, 4}
+table2 = {3, 4, 5, 6}
+
+result = table1.union(table2)
+
+print("Union:", result)
+
+
+
+table1 = {1, 2, 3, 4}
+table2 = {3, 4, 5, 6}
+
+result = table1.intersection(table2)
+
+print("Intersection:", result)
+
+
+table1 = {1, 2, 3, 4}
+table2 = {3, 4, 5, 6}
+
+result = table1.difference(table2)
+
+print("Difference:", result)
