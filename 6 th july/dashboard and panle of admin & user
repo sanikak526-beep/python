@@ -1,0 +1,22 @@
+<!-- User Dashboard -->
+<div class="user-panel" style="background:#f4f4f9; color:#333; padding:20px; font-family:sans-serif;">
+  <h2>User Dashboard</h2>
+  <p>Welcome back, John Doe!</p>
+  <div style="background:#fff; padding:15px; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1);">
+    <h4>My Profile</h4>
+    <p>Email: john@example.com</p>
+    <button onclick="alert('Profile updated!')" style="background:#2ed573; color:#fff; border:none; padding:8px 12px; cursor:pointer;">Edit Profile</button>
+  </div>
+</div>
+
+
+
+<!-- Admin Dashboard -->
+<div class="admin-panel" style="background:#1e1e2f; color:#fff; padding:20px; font-family:sans-serif;">
+  <h2>Admin Dashboard</h2>
+  <div class="stats" style="display:flex; gap:15px; margin-bottom:20px;">
+    <div style="background:#2d2d44; padding:15px; border-radius:8px;">Total Users: 1,240</div>
+    <div style="background:#2d2d44; padding:15px; border-radius:8px;">Active Reports: 14</div>
+  </div>
+  <button onclick="alert('User deleted!')" style="background:#ff4757; color:#fff; border:none; padding:10px 15px; cursor:pointer;">Delete User</button>
+</div>
