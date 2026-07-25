@@ -1,0 +1,36 @@
+class Student:
+    def __init__(self, name, roll_no, marks):
+        self.name = name
+        self.roll_no = roll_no
+        self.__marks = marks      # Private variable
+
+    # Getter Method
+    def get_marks(self):
+        return self.__marks
+
+    # Setter Method
+    def set_marks(self, marks):
+        if 0 <= marks <= 100:
+            self.__marks = marks
+        else:
+            print("Invalid Marks! Marks should be between 0 and 100.")
+
+    # Display Details
+    def display(self):
+        print("\n----- Student Details -----")
+        print("Name:", self.name)
+        print("Roll No:", self.roll_no)
+        print("Marks:", self.__marks)
+
+
+# Main Program
+student = Student("Sanika", 15, 85)
+
+student.display()
+
+print("\nCurrent Marks:", student.get_marks())
+
+student.set_marks(92)
+
+print("\nAfter Updating Marks:")
+student.display()
