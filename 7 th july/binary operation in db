@@ -1,0 +1,32 @@
+import sqlite3
+
+conn = sqlite3.connect("college.db")
+cursor = conn.cursor()
+
+cursor.execute("CREATE TABLE IF NOT EXISTS Student(id INTEGER, name TEXT)")
+cursor.execute("CREATE TABLE IF NOT EXISTS Marks(id INTEGER, marks INTEGER)")
+
+cursor.execute("DELETE FROM Student")
+cursor.execute("DELETE FROM Marks")
+
+cursor.executemany("INSERT INTO Student VALUES(?, ?)",
+                   [(1, "Priya"), (2, "Rahul")])
+
+cursor.executemany("INSERT INTO Marks VALUES(?, ?)",
+                   [(1, 90), (2, 85)])
+
+query = """
+SELECT Student.id, Student.name, Marks.marks
+FROM Student
+INNER JOIN Marks
+ON Student.id = Marks.id
+"""
+
+cursor.execute(query)
+
+print("Join Operation:")
+for row in cursor.fetchall():
+    print(row)
+
+conn.commit()
+conn.close()
