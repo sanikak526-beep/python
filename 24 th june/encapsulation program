@@ -1,0 +1,55 @@
+class BankAccount:
+    def __init__(self, account_number, holder_name, balance):
+        self.account_number = account_number      # Public
+        self.holder_name = holder_name            # Public
+        self.__balance = balance                  # Private
+
+    # Deposit Money
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+            print(f"₹{amount} deposited successfully.")
+        else:
+            print("Invalid deposit amount.")
+
+    # Withdraw Money
+    def withdraw(self, amount):
+        if amount <= self.__balance:
+            self.__balance -= amount
+            print(f"₹{amount} withdrawn successfully.")
+        else:
+            print("Insufficient balance.")
+
+    # Getter Method
+    def get_balance(self):
+        return self.__balance
+
+    # Setter Method
+    def set_balance(self, amount):
+        if amount >= 0:
+            self.__balance = amount
+            print("Balance updated successfully.")
+        else:
+            print("Invalid balance.")
+
+    # Display Account Details
+    def display(self):
+        print("\n----- Account Details -----")
+        print("Account Number:", self.account_number)
+        print("Account Holder:", self.holder_name)
+        print("Current Balance: ₹", self.__balance)
+
+
+# Main Program
+account = BankAccount("1234567890", "Sanika", 10000)
+
+account.display()
+
+account.deposit(5000)
+account.withdraw(3000)
+
+print("Available Balance: ₹", account.get_balance())
+
+account.set_balance(15000)
+
+account.display()
